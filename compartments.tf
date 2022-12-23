@@ -8,6 +8,7 @@ resource "oci_identity_compartment" "Retail_compartment" {
 
 resource "oci_identity_compartment" "sub_compartments" {
     #Required   
+    depends_on = [oci_identity_compartment.Retail_compartment]
      compartment_id = oci_identity_compartment.Retail_compartment.id
     
     for_each       = var.subcompartments    
