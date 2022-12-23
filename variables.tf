@@ -53,6 +53,7 @@ variable "compartment_description" {
 variable "compartment_id" {
   description = "retail compartment id"
   type        = string
+  default = resource.main_compartment.compartment_id_output
 }
 
 variable "subcompartments" {
