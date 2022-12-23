@@ -1,6 +1,6 @@
 resource "oci_core_vcn" "Retail_vcn" {
     depends_on = [oci_identity_compartment.sub_compartments]
-    ompartment_id = oci_identity_compartment.Retail_compartment.id
+    compartment_id = oci_identity_compartment.Retail_compartment.id
     cidr_blocks = var.vcn_cidr_blocks
     display_name = var.vcn_name
     dns_label = var.vcn_dns_label
@@ -9,7 +9,7 @@ resource "oci_core_vcn" "Retail_vcn" {
 resource "oci_core_subnet" "test_subnet" {
     #Required
     depends_on = [oci_identity_compartment.sub_compartments] 
-    vcn_id = "${var.vcn_id}"    
+    vcn_id =  oci_core_vcn.Retail_vcn.id
      compartment_id = oci_identity_compartment.Retail_compartment.id
     
     for_each       = var.subnets
