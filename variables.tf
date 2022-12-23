@@ -56,3 +56,14 @@ variable "subcompartments" {
   type    = any
   default = {}
 }
+
+#network parameters
+variable "subnets" {
+   type        = any
+   default     = {}
+}
+
+#variable "subnet_cidr_block" {}
+
+variable "vcn_id" {
+}
