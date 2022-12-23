@@ -69,11 +69,6 @@ variable "vcn_name" {
 }
 
 
-variable "network_compartment" {
-  description = "network compartment"
-  type        = string
-}
-
 
 variable "subnets" {
   type    = any
