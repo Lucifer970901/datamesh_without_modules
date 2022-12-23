@@ -37,6 +37,11 @@ variable "label_prefix" {
   default     = "FIN"
 }
 
+variable "subcompartments" {
+  type    = any
+  default = {}
+}
+
 #compartment parameters
 variable "compartment_name" {
   description = "compartment id where to create all resources"
